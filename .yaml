@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: strapi-deploy-render
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 1337
+      - key: APP_KEYS
+        value: oYm/NiOSCYueq4cvjtXTwQ==,BVSIuVuc+oRSZ9osGjFCmA==,lR13ABn/AuEU7EnODVbVhw==,3Uk2At3pvUYxWEtJJNA8dw==
+      - key: API_TOKEN_SALT
+        value: NPyB1MKr1jCZ7JR5WID7pg==
+      - key: ADMIN_JWT_SECRET
+        value: Z2qzXtZE4Jj2oVnhefW4kg==
+      - key: TRANSFER_TOKEN_SALT
+        value: pPyIG3sWESqJU8QhZZiIog==
+      - key: DATABASE_CLIENT
+        value: sqlite
+      - key: DATABASE_FILENAME
+        value: .tmp/data.db
+      - key: JWT_SECRET
+        value: O7VylkyXf3vn9r8YcCHaMg==
