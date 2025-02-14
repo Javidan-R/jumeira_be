@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "floors",
+  "info": {
+    "singularName": "floor",
+    "pluralName": "floors",
+    "displayName": "planing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "floorNumber": {
+      "type": "integer"
+    },
+    "premium": {
+      "type": "boolean"
+    },
+    "details": {
+      "type": "blocks"
+    },
+    "info": {
+      "type": "text"
+    },
+    "vector": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "rooms": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::room.room",
+      "inversedBy": "planings"
+    },
+    "sections": {
+      "type": "enumeration",
+      "enum": [
+        "section01",
+        "section02",
+        "section03",
+        "section04"
+      ]
+    }
+  }
+}
